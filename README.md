@@ -36,6 +36,15 @@ If you need to create a fresh JBrowse 2 project (instead of using the pre‑buil
 npx @jbrowse/cli create jbrowse2
 cd jbrowse2/
 ```
+如果网络不行,可使用这个方法
+```bash
+# 使用 curl 通过你的本地代理下载 v4.3.0 版本的 zip 包
+curl -x http://127.0.0.1:6789 -L -O https://github.com/GMOD/jbrowse-components/releases/download/v4.3.0/jbrowse-web-v4.3.0.zip
+# -n 参数非常重要！它表示“不要覆盖已有文件”，这样能完美保护你刚才生成的 config.json 和 reference 软链接
+unzip -n jbrowse-web-v4.3.0.zip -d jbrowse2
+rm jbrowse-web-v4.3.0.zip
+```
+
 
 ## Serving the JBrowse 2 Application
 
